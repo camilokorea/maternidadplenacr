@@ -1,0 +1,40 @@
+﻿@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+@import "anchors.css";
+@import "fonts.css";
+@import "../js/components/logo/logo.css";
+@import "../js/components/header/header.css";
+@import "../js/components/rotator/rotator.css";
+@import "../js/components/servicios/servicios.css";
+@import "../js/components/timeline/timeline.css";
+@import "../js/components/footer/footer.css";
+@import "../js/components/contacto/contacto.css";
+@import "../js/components/acerca/acerca.css";
+@import "../js/components/citas/citas.css";
+@import "../js/components/blog/blog.css";
+@import "../js/components/hero/hero.css";
+@import "../js/components/pages/home-page/home-page.css";
+@import "../js/components/pages/contacto-page/contacto-page.css";
+@import "../js/components/pages/acerca-page/acerca-page.css";
+@import "../js/components/pages/citas-page/citas-page.css";
+@import "../js/components/pages/blog-page/blog-page.css";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poiret One";
+  scroll-behavior: smooth;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+}
+
+body.md-default-theme,
+body,
+html.md-default-theme,
+html {
+  background-color: transparent !important;
+}

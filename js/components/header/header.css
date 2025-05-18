@@ -1,0 +1,47 @@
+.header {
+  background-color: rgb(0, 0, 0, 0.6);
+  border-radius: 0px 0px 10px 10px;
+  padding: 0px 10px 0px 10px;
+}
+
+.header .logo-container {}
+
+.header .nav-container {}
+
+.header .nav-container nav a {
+  color: #ffffff;
+  font-size: 1.8em;
+  text-decoration: none;
+}
+
+.header .nav-container nav a:hover {
+  color: #bf8560;
+}
+
+/* xs */
+@media (max-width: 599px) {
+  .header .nav-container nav a {
+    font-size: 1.3em;
+  }
+}
+
+/* sm */
+@media (min-width: 600px) and (max-width: 959px) {
+  .header .nav-container nav a {
+    font-size: 1.5em;
+  }
+}
+
+/* md */
+@media (min-width: 960px) and (max-width: 1279px) {
+  .header .nav-container nav a {
+    font-size: 2em;
+  }
+}
+
+/* xl */
+@media (min-width: 1920px) {
+  .header .nav-container nav a {
+    font-size: 4em;
+  }
+}

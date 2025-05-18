@@ -1,0 +1,48 @@
+.citas {
+  width: 90vw;
+  background-image: url(/images/fotos/cita.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.citas form {
+  background-color: rgb(255, 255, 255, 0.8);
+  font-size: 1.5em;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.citas form * {
+  color: #000000;
+}
+
+.citas form input,
+.citas form textarea {
+  font-family: "Poiret One";
+}
+
+.citas .md-datepicker-input-container {
+  width: 90%;
+}
+
+.citas .md-datepicker-input {
+  max-width: 100%;
+}
+
+.dtp div.dtp-date,
+.dtp div.dtp-time,
+.dtp .dtp-picker-time > a.dtp-select-hour.selected,
+.dtp .dtp-hand.on,
+.dtp .dtp-actual-meridien a.selected {
+  background-color: #bf8560;
+}
+
+.citas button {
+  background-color: #bf8560 !important;
+}
+
+.citas button[disabled] {
+  background-color: #cccccc !important;
+}

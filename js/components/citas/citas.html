@@ -1,0 +1,77 @@
+<h1>Citas</h1>
+<md-content layout-padding class="citas">
+  <div>
+    <form name="citasForm">
+      <div layout="row">
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Nombre</label>
+          <input ng-model="cita.nombre" required type="text" />
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Tel&eacute;fono</label>
+          <input ng-model="cita.telefono" required type="tel" />
+        </md-input-container>
+      </div>
+      <div layout="row">
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Servicio</label>
+          <md-select ng-model="cita.servicio" required>
+            <md-option ng-repeat="servicio in servicios" value="{{ servicio }}">
+              {{ servicio }}
+            </md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Capacidad para día: </label>
+          <md-datepicker
+            ng-model="cita.fecha"
+            md-placeholder="Día de la cita"
+          ></md-datepicker>
+        </md-input-container>
+      </div>
+      <div layout="row">
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Hora Inicio</label>
+          <input
+            mdc-datetime-picker
+            date="false"
+            time="true"
+            type="text"
+            short-time="true"
+            show-todays-date
+            click-outside-to-close="true"
+            placeholder="Hora de inicio"
+            auto-ok="true"
+            minute-steps="1"
+            format="hh:mm a"
+            ng-model="cita.from"
+          />
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Hora Final</label>
+          <input
+            mdc-datetime-picker
+            date="false"
+            time="true"
+            type="text"
+            short-time="true"
+            show-todays-date
+            click-outside-to-close="true"
+            placeholder="Hora final"
+            auto-ok="true"
+            minute-steps="1"
+            format="hh:mm a"
+            ng-model="cita.to"
+          />
+        </md-input-container>
+      </div>
+      <div>
+        <md-button
+          class="md-raised md-primary"
+          ng-disabled="!citasForm.$valid"
+          >Verificar disponibilidad</md-button
+        >
+      </div>
+    </form>
+  </div>
+</md-content>

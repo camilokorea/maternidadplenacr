@@ -1,0 +1,105 @@
+<h1>Contacto</h1>
+<md-content layout-padding class="contacto">
+  <div>
+    <form name="contactoForm">
+      <div layout="row">
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Nombre</label>
+          <input ng-model="usuario.nombre.nombre" required type="text" />
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Primer Apellido</label>
+          <input
+            ng-model="usuario.nombre.apellidos.primer"
+            required
+            type="text"
+          />
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Segundo Apellido</label>
+          <input
+            ng-model="usuario.nombre.apellidos.segundo"
+            required
+            type="text"
+          />
+        </md-input-container>
+      </div>
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>Direcci&oacute;n</label>
+        <input ng-model="usuario.direccion.direccion" required type="text" />
+      </md-input-container>
+      <div layout="row">
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Provincia</label>
+          <md-select
+            ng-model="usuario.direccion.provincia"
+            ng-change="getCantones()"
+            required
+          >
+            <md-option
+              ng-repeat="provincia in provincias"
+              value="{{ provincia }}"
+            >
+              {{ provincia }}
+            </md-option>
+          </md-select>
+          <md-progress-linear
+            ng-if="provinciasloading"
+            md-mode="indeterminate"
+          ></md-progress-linear>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Cant&oacute;n</label>
+          <md-select
+            ng-model="usuario.direccion.canton"
+            ng-change="getDistritos()"
+            required
+          >
+            <md-option ng-repeat="canton in cantones" value="{{ canton }}">
+              {{ canton }}
+            </md-option>
+          </md-select>
+          <md-progress-linear
+            ng-if="cantonesloading"
+            md-mode="indeterminate"
+          ></md-progress-linear>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Distrito</label>
+          <md-select ng-model="usuario.direccion.distrito" required>
+            <md-option ng-repeat="distrito in distritos" value="{{ distrito }}">
+              {{ distrito }}
+            </md-option>
+          </md-select>
+          <md-progress-linear
+            ng-if="distritosloading"
+            md-mode="indeterminate"
+          ></md-progress-linear>
+        </md-input-container>
+      </div>
+      <div layout="row">
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Correo electr&oacute;nico</label>
+          <input ng-model="email" required type="email" />
+        </md-input-container>
+      </div>
+      <md-input-container class="md-block">
+        <label>Comentario</label>
+        <textarea
+          ng-model="comentarios"
+          md-maxlength="150"
+          rows="5"
+          md-select-on-focus
+          required
+        ></textarea>
+      </md-input-container>
+      <div>
+        <md-button
+          class="md-raised md-primary"
+          ng-disabled="!contactoForm.$valid"
+          >Enviar</md-button
+        >
+      </div>
+    </form>
+  </div>
+</md-content>

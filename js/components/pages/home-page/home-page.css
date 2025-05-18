@@ -1,0 +1,50 @@
+.background {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    overflow-x: hidden;
+    background-image: url('/images/fotos/01.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+header-app {
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    z-index: 1;
+}
+
+acerca-app {
+    height: 130vh;
+    display: block !important;
+}
+
+/* xs */
+@media (max-width: 599px) {
+    acerca-app {
+        height: 250vh;
+    }
+}
+
+servicios-app {
+    height: 150vh;
+    display: block !important;
+}
+
+/* xs */
+@media (max-width: 599px) {
+    servicios-app {
+        height: 480vh;
+    }
+}
+
+footer-app {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+}

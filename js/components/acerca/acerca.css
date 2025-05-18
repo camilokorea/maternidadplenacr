@@ -1,0 +1,30 @@
+.acerca {
+  color: #ffffff;
+  padding-top: 22vh;
+  height: 100vh;
+}
+
+.acerca h1 {
+  font-size: 3em;
+  text-shadow: -1px -1px 1px rgba(255, 255, 255, .1), 1px 1px 1px rgba(0, 0, 0, .5);
+}
+
+.acerca .avatar {
+  background-image: url("/images/fotos/acerca_avatar.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 200px;
+  min-height: 200px;
+  border-radius: 50%;
+  border: 1px solid #000000;
+}
+
+.acerca p {
+  font-size: 1.5em;
+  text-shadow: -1px -1px 1px rgba(255, 255, 255, .1), 1px 1px 1px rgba(0, 0, 0, 0.2);
+  width: 90vw;
+  background-color: rgb(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 30px;
+  line-height: 2em;
+}

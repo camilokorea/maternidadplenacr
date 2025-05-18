@@ -1,0 +1,29 @@
+.logo {
+  padding: 0px !important;
+  color: #ffffff;
+}
+
+.logo .slogan-container {}
+
+.logo .slogan-container>* {
+  margin: 0px;
+}
+
+.logo .slogan-container h1 {
+  font-family: "Tangerine-Regular";
+  text-transform: capitalize;
+  font-size: 2.8em;
+}
+
+.logo .slogan-container p {}
+
+/* xl */
+@media (min-width: 1920px) {
+  .logo .slogan-container h1 {
+    font-size: 4em;
+  }
+
+  .logo .slogan-container p {
+    font-size: 1.7em;
+  }
+}

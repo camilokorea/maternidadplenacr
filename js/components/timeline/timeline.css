@@ -1,0 +1,113 @@
+.timeline {
+  width: 90vw;
+}
+
+.timeline h2 {
+  font-size: 3em;
+  color: #c1c6bf;
+}
+
+.timeline .descripcion {
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.timeline .rule {
+  width: 100%;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(/images/regla-monitoreo/timeline.png);
+}
+
+.timeline .weeks {
+  width: 71%;
+  height: 70px;
+}
+
+@media only screen and (max-width: 1366px) {
+  .timeline .weeks {
+    width: 85%;
+  }
+}
+
+.timeline .weeks .week {
+  width: 11%;
+  background-image: url(/images/iconos/countdown.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.timeline .quarters {
+  width: 72%;
+  margin-top: 10px;
+}
+@media only screen and (max-width: 1366px) {
+  .timeline .quarters {
+    width: 85%;
+  }
+}
+
+.timeline .quarters * {
+  margin: 0px;
+}
+
+.timeline .quarters .quarter {
+  width: 36%;
+  text-align: center;
+}
+
+.timeline .quarters .quarter:nth-child(1) {
+  border-top: 3px solid #c1c6bf;
+}
+
+.timeline .quarters .quarter:nth-child(2) {
+  border-top: 3px solid #ebbb95;
+  margin-left: 5px;
+}
+
+.timeline .quarters .quarter:nth-child(3) {
+  border-top: 3px solid #bf8560;
+  margin-left: 5px;
+}
+
+.timeline .quarters .quarter .trimestre {
+  font-size: 2.4em;
+
+  padding: 5px;
+}
+
+.timeline .quarters .quarter .peso {
+  font-size: 1.5em;
+}
+
+.timeline-dialog {
+  border-radius: 30px;
+  width: 75vw;
+  padding: 10px;
+}
+
+.timeline-dialog p {
+  font-size: 1.5em;
+}
+
+md-dialog {
+  border: 5px solid #d2dbc8;
+}
+
+md-dialog::-webkit-scrollbar {
+  width: 12px;
+}
+
+md-dialog::-webkit-scrollbar-track {
+  background: #fafafa;
+}
+
+md-dialog::-webkit-scrollbar-thumb {
+  background-color: #d2dbc8;
+  border-radius: 20px;
+}

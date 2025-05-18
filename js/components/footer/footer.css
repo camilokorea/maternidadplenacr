@@ -1,0 +1,138 @@
+.footer {
+  width: 100vw;
+  background-color: #c1c6bf;
+  margin-top: 20px;
+}
+
+.footer * {
+  margin: 0px;
+}
+
+.footer .footer-elements {
+  width: 90vw;
+}
+
+.footer .footer-nav-box {
+  width: 100%;
+}
+
+.footer .footer-nav-box .footer-logo {
+  padding-top: 10px;
+  width: 20%;
+}
+
+.footer .footer-nav-box .footer-logo logo-app {
+  zoom: 0.8;
+}
+
+/* xs */
+@media (max-width: 599px) {
+  .footer .footer-nav-box .footer-logo logo-app {
+    zoom: 0.6;
+  }
+
+  .footer .logo .slogan-container h1 {
+    font-size: 2em;
+  }
+
+  .footer .logo .slogan-container p {
+    font-size: 0.5em;
+  }
+}
+
+.footer .footer-nav-box .footer-nav {
+  width: 80%;
+  padding-top: 30px;
+}
+
+.footer .footer-nav-box .footer-nav .nav {
+  width: 100%;
+}
+
+.footer .footer-nav-box .footer-nav .nav a {
+  width: 20%;
+  font-size: 1.3em;
+  text-align: center;
+  font-weight: bolder;
+}
+
+/* sm */
+@media (min-width: 600px) and (max-width: 959px) {
+  .footer .footer-nav-box .footer-nav .nav {
+    visibility: hidden;
+  }
+}
+
+/* md */
+@media (min-width: 960px) and (max-width: 1279px) {
+  .footer .footer-nav-box .footer-nav .nav {
+    visibility: hidden;
+  }
+}
+
+/* xl */
+@media (min-width: 1920px) {
+  .footer .footer-nav-box .footer-nav .nav a {
+    font-size: 3em;
+  }
+}
+
+.footer .footer-nav-box .footer-nav .nav a:hover {
+  color: #bf8560;
+  text-decoration: none;
+}
+
+.footer .footer-nav-box .rrss-box {}
+
+.footer .footer-nav-box .rrss-box .rrss {
+  width: 50px;
+  height: 50px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 5px;
+}
+
+/* xl */
+@media (min-width: 1920px) {
+  .footer .footer-nav-box .rrss-box .rrss {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.footer .footer-nav-box .rrss-box .facebook {
+  background-image: url(/images/iconos/rrss/facebook.png);
+}
+
+.footer .footer-nav-box .rrss-box .instagram {
+  background-image: url(/images/iconos/rrss/instagram.png);
+}
+
+.footer .footer-nav-box .rrss-box .twitter {
+  background-image: url(/images/iconos/rrss/twitter.png);
+}
+
+.footer .footer-nav-box .rrss-box .linkedin {
+  background-image: url(/images/iconos/rrss/linkedin.png);
+}
+
+.footer .footer-copyright {
+  width: 100%;
+  height: 50px;
+  color: #ffffff;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+/* xs */
+@media (max-width: 599px) {
+  .footer .footer-copyright p {
+    font-size: 0.7em;
+  }
+
+  .footer .footer-nav-box .rrss-box .rrss {
+    width: 30px;
+    height: 30px;
+  }
+}

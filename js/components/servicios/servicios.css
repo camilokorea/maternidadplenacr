@@ -1,0 +1,97 @@
+.servicios {
+  width: 100vw;
+  color: #ffffff;
+  padding: 15vh 10vw 0vh 10vw;
+}
+
+.servicios h1 {
+  font-size: 3em;
+  text-shadow: -1px -1px 1px rgba(255, 255, 255, .1), 1px 1px 1px rgba(0, 0, 0, .5);
+}
+
+.servicios .botonera {}
+
+.servicios .botonera .boton-wrapper {
+  width: 20vw;
+}
+
+.servicios .botonera .boton-wrapper .boton {
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  background-size: cover;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.servicios .botonera .boton-wrapper p {
+  font-size: 1.3em;
+  text-align: center;
+  text-shadow: -1px -1px 1px rgba(255, 255, 255, .1), 1px 1px 1px rgba(0, 0, 0, 1);
+}
+
+/* xs */
+@media (max-width: 599px) {
+  .servicios .botonera .boton-wrapper .boton {
+    width: 150px;
+    height: 150px;
+  }
+  .servicios .botonera .boton-wrapper {
+    width: 100%;
+  }
+  
+  .servicios .botonera .boton-wrapper p {
+    font-size: 1.5em;
+    text-align: center;
+  }
+}
+
+.servicios .botonera .calculadora_edad_gestacional .boton {
+  background-image: url("/images/servicios/iconos/1.png");
+}
+
+.servicios .botonera .control_post_parto .boton {
+  background-image: url("/images/servicios/iconos/2.png");
+}
+
+.servicios .botonera .asesorias_rcp_primeros_auxilios .boton {
+  background-image: url("/images/servicios/iconos/3.png");
+}
+
+.servicios .botonera .salud_femenina .boton {
+  background-image: url("/images/servicios/iconos/4.png");
+}
+
+.servicios .botonera .dictamenes_recetas_medicas .boton {
+  background-image: url("/images/servicios/iconos/5.png");
+}
+
+.servicios .botonera .alimentacion_complementaria .boton {
+  background-image: url("/images/servicios/iconos/6.png");
+}
+
+.servicios .botonera .crianza_respetuosa .boton {
+  background-image: url("/images/servicios/iconos/7.png");
+}
+
+.servicios .botonera .control_prenatal .boton {
+  background-image: url("/images/servicios/iconos/8.png");
+}
+
+.servicios .botonera .estimulacion_oportuna_infantil .boton {
+  background-image: url("/images/servicios/iconos/9.png");
+}
+
+.servicios .botonera .crecimiento_desarrollo_infantil .boton {
+  background-image: url("/images/servicios/iconos/10.png");
+}
+
+.servicios .botonera .asesora_lactancia_materna .boton {
+  background-image: url("/images/servicios/iconos/11.png");
+}
+
+.servicios .botonera .atencion_medica .boton {
+  background-image: url("/images/servicios/iconos/12.png");
+}

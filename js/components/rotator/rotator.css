@@ -1,0 +1,51 @@
+.rotator {
+  position: relative;
+}
+
+.rotator .image {
+  position: absolute;
+  opacity: 0;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 93vh;
+  background-position: 0px 0px;
+  background-size: cover;
+
+  -webkit-transition: opacity 2s linear;
+  -moz-transition: opacity 2s linear;
+  -o-transition: opacity 2s linear;
+  transition: opacity 2s linear;
+
+  box-shadow: 1px 4px 15px -1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 4px 15px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 4px 15px -1px rgba(0, 0, 0, 0.75);
+}
+
+.rotator .showMe {
+  opacity: 1;
+}
+
+.rotator .image:nth-child(1) {
+  background-image: url(/images/fotos/01.jpg);
+}
+
+.rotator .image:nth-child(2) {
+  background-image: url(/images/fotos/02.jpg);
+}
+
+.rotator .image:nth-child(3) {
+  background-image: url(/images/fotos/03.jpg);
+}
+
+.rotator .image:nth-child(4) {
+  background-image: url(/images/fotos/04.jpg);
+}
+
+.rotator .image:nth-child(5) {
+  background-image: url(/images/fotos/05.jpg);
+}
+
+.rotator .image:nth-child(6) {
+  background-image: url(/images/fotos/06.jpg);
+}
