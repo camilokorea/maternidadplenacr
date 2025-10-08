@@ -38,3 +38,9 @@ html.md-default-theme,
 html {
   background-color: transparent !important;
 }
+
+md-toolbar.md-default-theme:not(.md-menu-toolbar),
+md-toolbar:not(.md-menu-toolbar),
+.md-toolbar-tools {
+  background-color: rgb(0, 0, 0, 0.6) !important;
+}

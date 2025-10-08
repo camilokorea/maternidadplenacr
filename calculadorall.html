@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html ng-app="GestacionApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculadora de Gestación</title>
+
+    <!-- AngularJS core -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+
+    <!-- Angular Animate -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-animate.min.js"></script>
+
+    <!-- Angular Aria -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-aria.min.js"></script>
+
+    <!-- Angular Material -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.24/angular-material.min.js"></script>
+
+    <!-- Angular Material CSS -->
+    <link rel="stylesheet"
+        href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.24/angular-material.min.css">
+
+
+
+    <style>
+        body {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .rueda-container {
+            margin: 30px auto;
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+
+        canvas {
+            width: 100%;
+            height: auto;
+            touch-action: none;
+        }
+
+        .resultados {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body ng-controller="GestacionCtrl as ctrl" layout="column" layout-align="center center">
+
+    <h2>Calculadora de Gestación</h2>
+
+    <div class="rueda-container">
+        <canvas id="ruedaCanvas"></canvas>
+    </div>
+
+    <div class="resultados" ng-if="ctrl.resultados">
+        <md-card>
+            <md-card-content>
+                <p><strong>Fecha probable de parto:</strong> {{ctrl.resultados.fechaParto}}</p>
+                <p><strong>Semanas de gestación:</strong> {{ctrl.resultados.semanas}}</p>
+                <p><strong>Días restantes:</strong> {{ctrl.resultados.diasRestantes}}</p>
+            </md-card-content>
+        </md-card>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
+    <script>
+        angular.module('GestacionApp', ['ngMaterial', 'ngAnimate', 'ngAria'])
+            .controller('GestacionCtrl', function ($scope) {
+                const MS_POR_DIA = 86400000;
+                this.resultados = null;
+
+                const canvas = document.getElementById('ruedaCanvas');
+                const ctx = canvas.getContext('2d');
+                canvas.width = 300;
+                canvas.height = 300;
+
+                let angle = 0;
+
+                function drawWheel() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                    ctx.save();
+                    ctx.translate(150, 150);
+                    ctx.rotate(angle);
+
+                    ctx.beginPath();
+                    ctx.arc(0, 0, 140, 0, 2 * Math.PI);
+                    ctx.fillStyle = '#FFEBEE';
+                    ctx.fill();
+                    ctx.strokeStyle = '#E57373';
+                    ctx.lineWidth = 4;
+                    ctx.stroke();
+
+                    ctx.fillStyle = '#B71C1C';
+                    ctx.font = '12px Arial';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+
+                    for (let i = 0; i < 40; i++) {
+                        const rad = (i / 40) * 2 * Math.PI;
+                        const x1 = Math.cos(rad) * 120;
+                        const y1 = Math.sin(rad) * 120;
+                        const x2 = Math.cos(rad) * 135;
+                        const y2 = Math.sin(rad) * 135;
+                        ctx.beginPath();
+                        ctx.moveTo(x1, y1);
+                        ctx.lineTo(x2, y2);
+                        ctx.strokeStyle = '#B71C1C';
+                        ctx.lineWidth = i % 4 === 0 ? 2 : 1;
+                        ctx.stroke();
+
+                        if (i % 4 === 0) {
+                            const labelX = Math.cos(rad) * 105;
+                            const labelY = Math.sin(rad) * 105;
+                            ctx.fillText(`${i}`, labelX, labelY);
+                        }
+                    }
+
+                    ctx.restore();
+                }
+
+                function updateResultsByAngle(angle) {
+                    const dias = Math.round((angle / (2 * Math.PI)) * 280);
+                    const fumDate = new Date(Date.now() - dias * MS_POR_DIA);
+                    const ahora = new Date();
+                    const edadGestacionalDias = Math.floor((ahora - fumDate) / MS_POR_DIA);
+                    const edadSemanas = Math.floor(edadGestacionalDias / 7);
+                    const diasRestantes = 280 - edadGestacionalDias;
+                    const fechaParto = new Date(fumDate.getTime() + 280 * MS_POR_DIA);
+
+                    $scope.$apply(() => {
+                        $scope.ctrl.resultados = {
+                            semanas: edadSemanas,
+                            diasRestantes,
+                            fechaParto: fechaParto.toDateString()
+                        };
+                    });
+                }
+
+                let isDragging = false;
+                let lastAngle = 0;
+
+                function getTouchAngle(x, y) {
+                    const dx = x - canvas.offsetLeft - canvas.width / 2;
+                    const dy = y - canvas.offsetTop - canvas.height / 2;
+                    return Math.atan2(dy, dx);
+                }
+
+                canvas.addEventListener('touchstart', function (e) {
+                    if (e.touches.length === 1) {
+                        isDragging = true;
+                        lastAngle = getTouchAngle(e.touches[0].clientX, e.touches[0].clientY);
+                    }
+                });
+
+                canvas.addEventListener('touchmove', function (e) {
+                    if (isDragging && e.touches.length === 1) {
+                        e.preventDefault();
+                        const currentAngle = getTouchAngle(e.touches[0].clientX, e.touches[0].clientY);
+                        const delta = currentAngle - lastAngle;
+                        angle += delta;
+                        drawWheel();
+                        updateResultsByAngle(angle);
+                        lastAngle = currentAngle;
+                    }
+                });
+
+                canvas.addEventListener('touchend', function () {
+                    isDragging = false;
+                });
+
+                drawWheel();
+            });
+    </script>
+</body>
+
+</html>

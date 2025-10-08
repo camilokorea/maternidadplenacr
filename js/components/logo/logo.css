@@ -10,9 +10,10 @@
 }
 
 .logo .slogan-container h1 {
-  font-family: "Tangerine-Regular";
+  font-family: "MadelynFill-Trial-Regular";
   text-transform: capitalize;
   font-size: 2.8em;
+  font-weight: lighter;
 }
 
 .logo .slogan-container p {}
